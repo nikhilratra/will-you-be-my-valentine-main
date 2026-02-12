@@ -6,9 +6,7 @@ export default function Page() {
   const [yesPressed, setYesPressed] = useState(false);
   const yesButtonSize = noCount * 20 + 16;
 
-  const handleNoClick = () => {
-    setNoCount(noCount + 1);
-  };
+  const handleNoClick = () => setNoCount(noCount + 1);
 
   const getNoButtonText = () => {
     const phrases = [
@@ -29,7 +27,6 @@ export default function Page() {
       "Estoy muerto",
       "No :(",
     ];
-
     return phrases[Math.min(noCount, phrases.length - 1)];
   };
 
@@ -38,7 +35,9 @@ export default function Page() {
       {yesPressed ? (
         <>
           <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
-          <div className="my-4 text-4xl font-bold">WOOOOOO!!! I love you pookie!! ;))</div>
+          <div className="my-4 text-4xl font-bold">
+            WOOOOOO!!! I love you pookie!! ;))
+          </div>
         </>
       ) : (
         <>
@@ -57,7 +56,7 @@ export default function Page() {
             </button>
             <button
               onClick={handleNoClick}
-              className=" rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
+              className="rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
             >
               {noCount === 0 ? "No" : getNoButtonText()}
             </button>
